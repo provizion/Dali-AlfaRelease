@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaintObject.h"
 
 @class DataViewController;
 
 @interface ModelController : NSObject <UIPageViewControllerDataSource>
+
+@property (retain, nonatomic) NSArray *pageData;
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;

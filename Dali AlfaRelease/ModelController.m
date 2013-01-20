@@ -7,8 +7,8 @@
 //
 
 #import "ModelController.h"
-
 #import "DataViewController.h"
+#
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -20,18 +20,17 @@
  */
 
 @interface ModelController()
-@property (readonly, strong, nonatomic) NSArray *pageData;
 @end
 
 @implementation ModelController
+@synthesize pageData;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Create the data model.
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        _pageData = [[dateFormatter monthSymbols] copy];
+        [self createData];
     }
     return self;
 }
@@ -45,7 +44,7 @@
     
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-    dataViewController.dataObject = self.pageData[index];
+    dataViewController.paintObject = [self.pageData objectAtIndex:index] ;
     return dataViewController;
 }
 
@@ -53,8 +52,39 @@
 {   
      // Return the index of the given data view controller.
      // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return [self.pageData indexOfObject:viewController.dataObject];
+    return [self.pageData indexOfObject:viewController.paintObject];
 }
+
+#pragma mark - Create Data
+
+- (void) createData
+
+{
+    
+    // initiate the paintObjects
+    
+    PaintObject *paintObject1 = [[PaintObject alloc] init];
+    PaintObject *paintObject2 = [[PaintObject alloc] init];
+    PaintObject *paintObject3 = [[PaintObject alloc] init];
+    
+    //initiate the UIImages of paintings
+    
+    UIImage *paintImage1 = [UIImage imageNamed:@"paint1.jpg"];
+    UIImage *paintImage2 = [UIImage imageNamed:@"paint2.jpg"];
+    UIImage *paintImage3 = [UIImage imageNamed:@"paint3.jpg"];
+    
+    //fill the imageObjects with Content
+    
+    paintObject1.image = paintImage1;
+    paintObject2.image = paintImage2;
+    paintObject3.image = paintImage3;
+    
+    self.pageData = [[NSArray alloc] initWithObjects:paintObject1, paintObject2, paintObject3, nil];
+          
+          
+}
+
+
 
 #pragma mark - Page View Controller Data Source
 

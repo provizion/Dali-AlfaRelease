@@ -14,10 +14,13 @@
 
 @implementation DataViewController
 
+@synthesize paintObject, paintView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    self.paintView.image = paintObject.image;
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,7 +32,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.dataLabel.text = [self.dataObject description];
+    
 }
 
 @end
