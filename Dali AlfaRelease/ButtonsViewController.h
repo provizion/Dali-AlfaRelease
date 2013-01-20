@@ -16,13 +16,11 @@
     
 }
 
-@property IBOutlet UIButton *previousButton;
-@property IBOutlet UIButton *nextButton;
-@property IBOutlet UIButton *infoButton;
 @property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
 
 - (IBAction)nextPaintingShow:(id)sender;
 - (IBAction)previousPaintingShow:(id)sender;
+- (IBAction)infoShow:(id)sender;
 
 
 
@@ -32,6 +30,7 @@
 
 - (void) nextButtonPressed;
 - (void) previousButtonPressed;
+- (void) showInfoView;
 
 @end
 

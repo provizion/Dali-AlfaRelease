@@ -14,7 +14,7 @@
 
 @implementation ButtonsViewController
 
-@synthesize nextButton, previousButton, infoButton, delegate;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +48,12 @@
 {
     
     [delegate previousButtonPressed];
+}
+
+- (IBAction)infoShow:(id)sender;
+
+{
+    [delegate showInfoView];
 }
 
 @end

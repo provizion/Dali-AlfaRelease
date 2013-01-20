@@ -79,6 +79,10 @@
     paintObject2.image = paintImage2;
     paintObject3.image = paintImage3;
     
+    paintObject1.name = @"Три лебедя";
+    paintObject2.name = @"Великий мастурбатор";
+    paintObject3.name = @"Постоянство памяти";
+    
     self.pageData = [[NSArray alloc] initWithObjects:paintObject1, paintObject2, paintObject3, nil];
           
           
@@ -112,5 +116,7 @@
     }
     return [self viewControllerAtIndex:index storyboard:viewController.storyboard];
 }
+
+
 
 @end

@@ -15,6 +15,7 @@
 @interface RootViewController ()
 @property (readonly, strong, nonatomic) ModelController *modelController;
 @property (strong, nonatomic) ButtonsViewController *buttonsViewController;
+@property (strong, nonatomic) InfoViewController *infoViewController;
 @end
 
 @implementation RootViewController
@@ -55,7 +56,10 @@
     [self addChildViewController:self.buttonsViewController];
     [self.view addSubview:self.buttonsViewController.view];
     
+    // Configure InfoViewController
     
+    self.infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    self.infoViewController.delegate = self;
 
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
@@ -110,13 +114,25 @@
     }
 }
 
+- (void) showInfoView
+{
+    
+    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    NSLog (@"index = %i",index);
+    self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:index];
+    self.infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:self.infoViewController animated:YES completion:NULL];
+    
+}
 
 #pragma mark - InfoViewController delegate methods
 
 - (void) closeInfoView
 
 {
-    NSLog (@"ping");
+    
+   [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

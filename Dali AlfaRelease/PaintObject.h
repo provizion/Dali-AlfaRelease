@@ -11,5 +11,6 @@
 @interface PaintObject : NSObject
 
 @property UIImage *image;
+@property NSString *name;
 
 @end

@@ -16,5 +16,6 @@
 
 - (void) nextButtonPressed;
 - (void) closeInfoView;
+- (void) showInfoView;
 
 @end

@@ -14,13 +14,14 @@
 
 @implementation InfoViewController
 
-@synthesize delegate, paintObject, infoView;
+@synthesize delegate, paintObject, infoView, nameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+    
+        
     }
     return self;
 }
@@ -28,13 +29,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    //resize modal view
+    self.view.superview.bounds = CGRectMake(0, 0, 540, 500);
+    self.nameLabel.text = paintObject.name;
 }
 
 - (IBAction)done:(id)sender

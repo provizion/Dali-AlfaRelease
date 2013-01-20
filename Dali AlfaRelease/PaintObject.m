@@ -10,6 +10,6 @@
 
 @implementation PaintObject
 
-@synthesize image;
+@synthesize image, name;
 
 @end
