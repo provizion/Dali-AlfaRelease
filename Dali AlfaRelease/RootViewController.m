@@ -77,18 +77,46 @@
     return _modelController;
 }
 
-#pragma mark - Methods Responders to Buttons
+#pragma mark - ButtonsViewController delegate methods
 
 - (void) nextButtonPressed
 {
-    NSLog (@"Hello.");
-    //DataViewController *nextDataViewController = [[DataViewController alloc] init];
-    //NSUInteger index = [self.modelController indexOfViewController:(DataViewController *)viewController];
+    DataViewController *nextDataViewController = [[DataViewController alloc] init];
+    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    index ++;
+    if (index < [self.modelController.pageData count]) {
     
-    //nextDataViewController = [self.modelController ]
-    
-    //[self.pageViewController setViewControllers:<#(NSArray *)#> direction:<#(UIPageViewControllerNavigationDirection)#> animated:<#(BOOL)#> completion:<#^(BOOL finished)completion#>]
+        nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
+        NSArray *viewControllers = @[nextDataViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    }
+}
 
+- (void) previousButtonPressed
+{
+    DataViewController *nextDataViewController = [[DataViewController alloc] init];
+    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    if ((index == 0) || (index == NSNotFound)) {
+        
+    }
+    
+    else {
+    index --;
+    
+        
+        nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
+        NSArray *viewControllers = @[nextDataViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+    }
+}
+
+
+#pragma mark - InfoViewController delegate methods
+
+- (void) closeInfoView
+
+{
+    NSLog (@"ping");
 }
 
 

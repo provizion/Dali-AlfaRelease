@@ -1,20 +1,20 @@
 //
-//  ButtonsViewController.m
+//  InfoViewController.m
 //  Dali AlfaRelease
 //
 //  Created by Mikhail Provizion on 20.01.13.
 //  Copyright (c) 2013 Mikhail Provizion. All rights reserved.
 //
 
-#import "ButtonsViewController.h"
+#import "InfoViewController.h"
 
-@interface ButtonsViewController ()
+@interface InfoViewController ()
 
 @end
 
-@implementation ButtonsViewController
+@implementation InfoViewController
 
-@synthesize nextButton, previousButton, infoButton, delegate;
+@synthesize delegate, paintObject, infoView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,17 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)nextPaintingShow:(id)sender
-
+- (IBAction)done:(id)sender
 {
-    [delegate nextButtonPressed];
-}
-
-- (IBAction)previousPaintingShow:(id)sender;
-
-{
-    
-    [delegate previousButtonPressed];
+    [delegate closeInfoView];
 }
 
 @end

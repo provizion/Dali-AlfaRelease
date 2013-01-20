@@ -28,9 +28,11 @@
 		5233F8C616ABF2F900B36BA7 /* paint1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8C516ABF2F900B36BA7 /* paint1.jpg */; };
 		5233F8CE16ABF36400B36BA7 /* paint2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8CD16ABF36400B36BA7 /* paint2.jpg */; };
 		5233F8D016ABF36A00B36BA7 /* paint3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8CF16ABF36A00B36BA7 /* paint3.jpg */; };
-		5233F8D316ABF3CC00B36BA7 /* Paint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8D216ABF3CC00B36BA7 /* Paint.m */; };
+		5233F8D316ABF3CC00B36BA7 /* PaintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8D216ABF3CC00B36BA7 /* PaintObject.m */; };
 		5233F8DC16AC243A00B36BA7 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */; };
 		5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */; };
+		52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */; };
+		52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +76,13 @@
 		5233F8CD16ABF36400B36BA7 /* paint2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paint2.jpg; sourceTree = "<group>"; };
 		5233F8CF16ABF36A00B36BA7 /* paint3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paint3.jpg; sourceTree = "<group>"; };
 		5233F8D116ABF3CC00B36BA7 /* PaintObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintObject.h; sourceTree = "<group>"; };
-		5233F8D216ABF3CC00B36BA7 /* Paint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paint.m; sourceTree = "<group>"; };
+		5233F8D216ABF3CC00B36BA7 /* PaintObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintObject.m; sourceTree = "<group>"; };
 		5233F8D916AC243900B36BA7 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
 		5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsViewController.m; sourceTree = "<group>"; };
 		5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsViewController.xib; sourceTree = "<group>"; };
+		52D6FE6D16AC6AB1003FBC4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,9 @@
 				5233F8C416ABF2D900B36BA7 /* paintings */,
 				5233F8C316ABF2AE00B36BA7 /* Model */,
 				5233F89116ABF1D100B36BA7 /* AppDelegate.h */,
+				52D6FE6D16AC6AB1003FBC4A /* InfoViewController.h */,
+				52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */,
+				52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */,
 				5233F8D916AC243900B36BA7 /* ButtonsViewController.h */,
 				5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */,
 				5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */,
@@ -193,7 +201,7 @@
 				5233F8A016ABF1D100B36BA7 /* ModelController.h */,
 				5233F8A116ABF1D100B36BA7 /* ModelController.m */,
 				5233F8D116ABF3CC00B36BA7 /* PaintObject.h */,
-				5233F8D216ABF3CC00B36BA7 /* Paint.m */,
+				5233F8D216ABF3CC00B36BA7 /* PaintObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				5233F8CE16ABF36400B36BA7 /* paint2.jpg in Resources */,
 				5233F8D016ABF36A00B36BA7 /* paint3.jpg in Resources */,
 				5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */,
+				52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +336,9 @@
 				5233F89C16ABF1D100B36BA7 /* RootViewController.m in Sources */,
 				5233F89F16ABF1D100B36BA7 /* DataViewController.m in Sources */,
 				5233F8A216ABF1D100B36BA7 /* ModelController.m in Sources */,
-				5233F8D316ABF3CC00B36BA7 /* Paint.m in Sources */,
+				5233F8D316ABF3CC00B36BA7 /* PaintObject.m in Sources */,
 				5233F8DC16AC243A00B36BA7 /* ButtonsViewController.m in Sources */,
+				52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +515,7 @@
 				5233F8BF16ABF1D100B36BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5233F8C016ABF1D100B36BA7 /* Build configuration list for PBXNativeTarget "Dali AlfaReleaseTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +524,7 @@
 				5233F8C216ABF1D100B36BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

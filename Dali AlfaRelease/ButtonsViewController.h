@@ -22,6 +22,7 @@
 @property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
 
 - (IBAction)nextPaintingShow:(id)sender;
+- (IBAction)previousPaintingShow:(id)sender;
 
 
 
@@ -30,6 +31,7 @@
 @protocol ButtonsViewControllerDelegate
 
 - (void) nextButtonPressed;
+- (void) previousButtonPressed;
 
 @end
 

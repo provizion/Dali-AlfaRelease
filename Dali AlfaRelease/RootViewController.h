@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ButtonsViewController.h"
+#import "InfoViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate, InfoViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+
 - (void) nextButtonPressed;
+- (void) closeInfoView;
 
 @end
