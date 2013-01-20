@@ -9,21 +9,24 @@
 #import "RootViewController.h"
 
 #import "ModelController.h"
-
+#import "ButtonsViewController.h"
 #import "DataViewController.h"
 
 @interface RootViewController ()
 @property (readonly, strong, nonatomic) ModelController *modelController;
+@property (strong, nonatomic) ButtonsViewController *buttonsViewController;
 @end
 
 @implementation RootViewController
 
 @synthesize modelController = _modelController;
+@synthesize pageViewController, buttonsViewController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -31,7 +34,7 @@
 
     DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
 
     self.pageViewController.dataSource = self.modelController;
 
@@ -44,6 +47,13 @@
     self.pageViewController.view.frame = pageViewRect;
 
     [self.pageViewController didMoveToParentViewController:self];
+    
+    // Configure ButtonsViewController
+    
+    self.buttonsViewController = [[ButtonsViewController alloc] initWithNibName:@"ButtonsViewController" bundle:nil];
+    self.buttonsViewController.delegate = self;
+    [self addChildViewController:self.buttonsViewController];
+    [self.view addSubview:self.buttonsViewController.view];
     
     
 
@@ -66,6 +76,21 @@
     }
     return _modelController;
 }
+
+#pragma mark - Methods Responders to Buttons
+
+- (void) nextButtonPressed
+{
+    NSLog (@"Hello.");
+    //DataViewController *nextDataViewController = [[DataViewController alloc] init];
+    //NSUInteger index = [self.modelController indexOfViewController:(DataViewController *)viewController];
+    
+    //nextDataViewController = [self.modelController ]
+    
+    //[self.pageViewController setViewControllers:<#(NSArray *)#> direction:<#(UIPageViewControllerNavigationDirection)#> animated:<#(BOOL)#> completion:<#^(BOOL finished)completion#>]
+
+}
+
 
 #pragma mark - UIPageViewController delegate methods
 

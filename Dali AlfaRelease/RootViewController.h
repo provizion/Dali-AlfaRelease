@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ButtonsViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+- (void) nextButtonPressed;
 
 @end

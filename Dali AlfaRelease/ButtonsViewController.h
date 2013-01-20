@@ -8,6 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ButtonsViewController : UIViewController
+@protocol ButtonsViewControllerDelegate;
+
+@interface ButtonsViewController : UIViewController {
+    
+    id <ButtonsViewControllerDelegate> delegate;
+    
+}
+
+@property IBOutlet UIButton *previousButton;
+@property IBOutlet UIButton *nextButton;
+@property IBOutlet UIButton *infoButton;
+@property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
+
+- (IBAction)nextPaintingShow:(id)sender;
+
+
 
 @end
+
+@protocol ButtonsViewControllerDelegate
+
+- (void) nextButtonPressed;
+
+@end
+
