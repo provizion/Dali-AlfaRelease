@@ -7,10 +7,10 @@
 //
 
 #import "RootViewController.h"
-
 #import "ModelController.h"
 #import "ButtonsViewController.h"
 #import "DataViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface RootViewController ()
 @property (readonly, strong, nonatomic) ModelController *modelController;
@@ -21,7 +21,7 @@
 @implementation RootViewController
 
 @synthesize modelController = _modelController;
-@synthesize pageViewController, buttonsViewController;
+@synthesize pageViewController, buttonsViewController, player;
 
 - (void)viewDidLoad
 {
@@ -60,8 +60,9 @@
     
     self.infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
     self.infoViewController.delegate = self;
-
+    
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
+    
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
@@ -114,6 +115,8 @@
     }
 }
 
+
+
 - (void) showInfoView
 {
     
@@ -135,6 +138,27 @@
    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void) voiceStartPausePressed
+
+{
+    NSLog (@"ping");
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Guitar" ofType: @"mp3"];
+    NSURL *filePath = [[NSURL alloc] initFileURLWithPath:soundFilePath];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
+    [player prepareToPlay];
+    
+    if (self.player.playing == NO)
+    {
+        [player play];
+    }
+    
+    else
+    {
+
+        [player pause];
+    }
+
+}
 
 #pragma mark - UIPageViewController delegate methods
 

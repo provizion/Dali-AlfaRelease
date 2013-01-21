@@ -10,18 +10,21 @@
 
 @protocol ButtonsViewControllerDelegate;
 
+
 @interface ButtonsViewController : UIViewController {
     
     id <ButtonsViewControllerDelegate> delegate;
+    IBOutlet UIButton *voiceButton;
     
 }
 
 @property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
+@property IBOutlet UIButton *voiceButton;
 
 - (IBAction)nextPaintingShow:(id)sender;
 - (IBAction)previousPaintingShow:(id)sender;
 - (IBAction)infoShow:(id)sender;
-
+- (IBAction)voiceStartPause:(id)sender;
 
 
 @end
@@ -31,6 +34,8 @@
 - (void) nextButtonPressed;
 - (void) previousButtonPressed;
 - (void) showInfoView;
+- (void) voiceStartPausePressed;
+
 
 @end
 

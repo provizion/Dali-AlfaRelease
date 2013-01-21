@@ -14,7 +14,7 @@
 
 @implementation ButtonsViewController
 
-@synthesize delegate;
+@synthesize delegate, voiceButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,6 +54,12 @@
 
 {
     [delegate showInfoView];
+}
+
+- (IBAction)voiceStartPause:(id)sender;
+
+{
+    [delegate voiceStartPausePressed];
 }
 
 @end
