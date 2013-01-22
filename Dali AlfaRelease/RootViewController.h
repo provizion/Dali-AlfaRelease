@@ -16,9 +16,9 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic, retain) AVAudioPlayer *player;
 
+- (void) songPlayPressed;
 - (void) nextButtonPressed;
 - (void) closeInfoView;
 - (void) showInfoView;
-- (void) voiceStartPausePressed;
 
 @end

@@ -14,7 +14,7 @@
 
 @implementation ButtonsViewController
 
-@synthesize delegate, voiceButton;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,23 +43,24 @@
     [delegate nextButtonPressed];
 }
 
-- (IBAction)previousPaintingShow:(id)sender;
+- (IBAction)previousPaintingShow:(id)sender
 
 {
     
     [delegate previousButtonPressed];
 }
 
-- (IBAction)infoShow:(id)sender;
+- (IBAction)infoShow:(id)sender
 
 {
     [delegate showInfoView];
 }
 
-- (IBAction)voiceStartPause:(id)sender;
+- (IBAction)songPlay:(id)sender
 
 {
-    [delegate voiceStartPausePressed];
+    [delegate songPlayPressed];
 }
+
 
 @end

@@ -119,14 +119,12 @@
 
 - (void) showInfoView
 {
-    
     NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
     NSLog (@"index = %i",index);
     self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:index];
     self.infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     self.infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:self.infoViewController animated:YES completion:NULL];
-    
 }
 
 #pragma mark - InfoViewController delegate methods
@@ -138,23 +136,20 @@
    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void) voiceStartPausePressed
+- (void) songPlayPressed
 
 {
-    NSLog (@"ping");
-    //NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Je veux" ofType: @"mp3"];
-    //PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
-    //paintObjectForAudio.voice = [[NSURL alloc] initFileURLWithPath:soundFilePath];
-    NSURL *file = [[NSURL alloc] initFileURLWithPath:soundFilePath];
-    
-    //paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:NULL];
+    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
+    paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+    NSURL *urlForPlayer = paintObjectForAudio.voice;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
     [player prepareToPlay];
-    
     [player play];
+    
 }
+
+@end
 
 #pragma mark - UIPageViewController delegate methods
 
@@ -195,4 +190,4 @@
     return UIPageViewControllerSpineLocationMid;
 }
  */
-@end
+
