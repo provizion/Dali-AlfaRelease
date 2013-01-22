@@ -87,6 +87,7 @@
 - (void) nextButtonPressed
 {
     DataViewController *nextDataViewController = [[DataViewController alloc] init];
+    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
     NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
     index ++;
     if (index < [self.modelController.pageData count]) {
@@ -94,12 +95,22 @@
         nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
         NSArray *viewControllers = @[nextDataViewController];
         [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+        
+        //add the voice for next scene
+        paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+        NSURL *urlForPlayer = paintObjectForAudio.voice;
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        [player prepareToPlay];
+        
     }
+    
+
 }
 
 - (void) previousButtonPressed
 {
     DataViewController *nextDataViewController = [[DataViewController alloc] init];
+    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
     NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
     if ((index == 0) || (index == NSNotFound)) {
         
@@ -112,7 +123,17 @@
         nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
         NSArray *viewControllers = @[nextDataViewController];
         [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+        
+        //load the audio for paint
+        paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+        NSURL *urlForPlayer = paintObjectForAudio.voice;
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        [player prepareToPlay];
+
     }
+    
+    
+
 }
 
 
@@ -139,14 +160,11 @@
 - (void) songPlayPressed
 
 {
-    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
-    paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-    NSURL *urlForPlayer = paintObjectForAudio.voice;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
-    [player prepareToPlay];
-    [player play];
     
+    if (self.player.isPlaying == NO)
+        [player play];
+    else
+        [player pause];
 }
 
 @end
