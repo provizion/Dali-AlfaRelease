@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5224905216ADC43A00DC2207 /* Guitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5224905116ADC43A00DC2207 /* Guitar.mp3 */; };
+		521E87C816AF1FA8001E842A /* Je veux.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 521E87C716AF1FA8001E842A /* Je veux.mp3 */; };
+		5224905216ADC43A00DC2207 /* Voice1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5224905116ADC43A00DC2207 /* Voice1.mp3 */; };
 		5224905516ADC85200DC2207 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5224905416ADC85200DC2207 /* AVFoundation.framework */; };
 		5233F88316ABF1D100B36BA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5233F88216ABF1D100B36BA7 /* UIKit.framework */; };
 		5233F88516ABF1D100B36BA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5233F88416ABF1D100B36BA7 /* Foundation.framework */; };
@@ -35,6 +36,7 @@
 		5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */; };
 		52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */; };
 		52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */; };
+		52D8DE7916AF0F8E0051262E /* Voice3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 52D8DE7816AF0F8E0051262E /* Voice3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5224905116ADC43A00DC2207 /* Guitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guitar.mp3; sourceTree = "<group>"; };
+		521E87C716AF1FA8001E842A /* Je veux.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Je veux.mp3"; sourceTree = "<group>"; };
+		5224905116ADC43A00DC2207 /* Voice1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Voice1.mp3; sourceTree = "<group>"; };
 		5224905416ADC85200DC2207 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5233F87E16ABF1D100B36BA7 /* Dali AlfaRelease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dali AlfaRelease.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5233F88216ABF1D100B36BA7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,7 @@
 		52D6FE6D16AC6AB1003FBC4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		52D8DE7816AF0F8E0051262E /* Voice3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Voice3.mp3; path = "../../../../../Music/iTunes/iTunes Media/Music/John Lennon/Unknown Album/Voice3.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +251,9 @@
 		5233F8C416ABF2D900B36BA7 /* AllContent */ = {
 			isa = PBXGroup;
 			children = (
-				5224905116ADC43A00DC2207 /* Guitar.mp3 */,
+				521E87C716AF1FA8001E842A /* Je veux.mp3 */,
+				52D8DE7816AF0F8E0051262E /* Voice3.mp3 */,
+				5224905116ADC43A00DC2207 /* Voice1.mp3 */,
 				5233F8CF16ABF36A00B36BA7 /* paint3.jpg */,
 				5233F8CD16ABF36400B36BA7 /* paint2.jpg */,
 				5233F8C516ABF2F900B36BA7 /* paint1.jpg */,
@@ -336,7 +342,9 @@
 				5233F8D016ABF36A00B36BA7 /* paint3.jpg in Resources */,
 				5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */,
 				52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */,
-				5224905216ADC43A00DC2207 /* Guitar.mp3 in Resources */,
+				5224905216ADC43A00DC2207 /* Voice1.mp3 in Resources */,
+				52D8DE7916AF0F8E0051262E /* Voice3.mp3 in Resources */,
+				521E87C816AF1FA8001E842A /* Je veux.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

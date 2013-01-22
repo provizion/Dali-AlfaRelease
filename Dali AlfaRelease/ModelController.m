@@ -79,9 +79,23 @@
     paintObject2.image = paintImage2;
     paintObject3.image = paintImage3;
     
+    //file the titles of paintings
+    
     paintObject1.name = @"Три лебедя";
     paintObject2.name = @"Великий мастурбатор";
     paintObject3.name = @"Постоянство памяти";
+    
+    //fill the music paths of PaintObject
+    
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Voice1" ofType: @"mp3"];
+    paintObject1.voice = [[NSURL alloc] initFileURLWithPath:soundFilePath];
+    
+    NSString *soundFilePath2 = [[NSBundle mainBundle] pathForResource: @"Voice2" ofType: @"mp3"];
+    paintObject2.voice = [[NSURL alloc] initFileURLWithPath:soundFilePath2];
+    
+    NSString *soundFilePath3 = [[NSBundle mainBundle] pathForResource: @"Voice3" ofType: @"mp3"];
+    paintObject3.voice = [[NSURL alloc] initFileURLWithPath:soundFilePath3];
+    
     
     self.pageData = [[NSArray alloc] initWithObjects:paintObject1, paintObject2, paintObject3, nil];
           

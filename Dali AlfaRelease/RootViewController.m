@@ -142,22 +142,18 @@
 
 {
     NSLog (@"ping");
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Guitar" ofType: @"mp3"];
-    NSURL *filePath = [[NSURL alloc] initFileURLWithPath:soundFilePath];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
+    //NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"Je veux" ofType: @"mp3"];
+    //PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
+    //paintObjectForAudio.voice = [[NSURL alloc] initFileURLWithPath:soundFilePath];
+    NSURL *file = [[NSURL alloc] initFileURLWithPath:soundFilePath];
+    
+    //paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:NULL];
     [player prepareToPlay];
     
-    if (self.player.playing == NO)
-    {
-        [player play];
-    }
-    
-    else
-    {
-
-        [player pause];
-    }
-
+    [player play];
 }
 
 #pragma mark - UIPageViewController delegate methods
