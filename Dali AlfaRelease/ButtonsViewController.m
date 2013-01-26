@@ -14,7 +14,7 @@
 
 @implementation ButtonsViewController
 
-@synthesize delegate;
+@synthesize delegate, titleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

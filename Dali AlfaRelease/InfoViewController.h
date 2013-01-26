@@ -18,7 +18,7 @@
 @property (nonatomic, retain) id <InfoViewControllerDelegate> delegate;
 @property PaintObject *paintObject;
 @property UITextView *infoView;
-@property IBOutlet UILabel *nameLabel;
+@property IBOutlet UITextView *textView;
 
 @end
 

@@ -102,6 +102,10 @@
         self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
         [player prepareToPlay];
         
+        //change the title and text
+        
+        self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
+        
     }
     
 
@@ -129,6 +133,10 @@
         NSURL *urlForPlayer = paintObjectForAudio.voice;
         self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
         [player prepareToPlay];
+        
+        //change the title and text
+        
+        self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
 
     }
     

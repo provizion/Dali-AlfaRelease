@@ -13,5 +13,6 @@
 @property UIImage *image;
 @property NSString *name;
 @property NSURL *voice;
+@property NSString *text;
 
 @end
