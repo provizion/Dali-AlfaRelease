@@ -37,6 +37,7 @@
 		52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */; };
 		52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */; };
 		52D8DE7916AF0F8E0051262E /* Voice3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 52D8DE7816AF0F8E0051262E /* Voice3.mp3 */; };
+		52DE76C516B470B500C5BF82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DE76C416B470B500C5BF82 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,7 @@
 		5233F89D16ABF1D100B36BA7 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
 		5233F89E16ABF1D100B36BA7 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		5233F8A016ABF1D100B36BA7 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		5233F8A116ABF1D100B36BA7 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		5233F8A116ABF1D100B36BA7 /* ModelController.m */ = {isa = PBXFileReference; indentWidth = 6; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; tabWidth = 6; usesTabs = 0; wrapsLines = 1; };
 		5233F8A416ABF1D100B36BA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5233F8AB16ABF1D100B36BA7 /* Dali AlfaReleaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dali AlfaReleaseTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5233F8AC16ABF1D100B36BA7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -91,6 +92,7 @@
 		52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		52D8DE7816AF0F8E0051262E /* Voice3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Voice3.mp3; path = "../../../../../Music/iTunes/iTunes Media/Music/John Lennon/Unknown Album/Voice3.mp3"; sourceTree = "<group>"; };
+		52DE76C416B470B500C5BF82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DE76C516B470B500C5BF82 /* QuartzCore.framework in Frameworks */,
 				5233F8AD16ABF1D100B36BA7 /* SenTestingKit.framework in Frameworks */,
 				5233F8AE16ABF1D100B36BA7 /* UIKit.framework in Frameworks */,
 				5233F8AF16ABF1D100B36BA7 /* Foundation.framework in Frameworks */,
@@ -162,6 +165,7 @@
 		5233F87316ABF1D100B36BA7 = {
 			isa = PBXGroup;
 			children = (
+				52DE76C416B470B500C5BF82 /* QuartzCore.framework */,
 				5233F88816ABF1D100B36BA7 /* Dali AlfaRelease */,
 				5233F8B216ABF1D100B36BA7 /* Dali AlfaReleaseTests */,
 				5233F88116ABF1D100B36BA7 /* Frameworks */,

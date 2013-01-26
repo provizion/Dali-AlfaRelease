@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PaintObject.h"
+#import <QuartzCore/QuartzCore.h>
 
 @protocol InfoViewControllerDelegate;
 
@@ -19,6 +20,7 @@
 @property PaintObject *paintObject;
 @property UITextView *infoView;
 @property IBOutlet UITextView *textView;
+@property IBOutlet UIButton *doneButton;
 
 @end
 
