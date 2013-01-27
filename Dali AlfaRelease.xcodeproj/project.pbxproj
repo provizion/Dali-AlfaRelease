@@ -165,7 +165,6 @@
 		5233F87316ABF1D100B36BA7 = {
 			isa = PBXGroup;
 			children = (
-				52DE76C416B470B500C5BF82 /* QuartzCore.framework */,
 				5233F88816ABF1D100B36BA7 /* Dali AlfaRelease */,
 				5233F8B216ABF1D100B36BA7 /* Dali AlfaReleaseTests */,
 				5233F88116ABF1D100B36BA7 /* Frameworks */,
@@ -185,6 +184,7 @@
 		5233F88116ABF1D100B36BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52DE76C416B470B500C5BF82 /* QuartzCore.framework */,
 				5224905416ADC85200DC2207 /* AVFoundation.framework */,
 				5233F88216ABF1D100B36BA7 /* UIKit.framework */,
 				5233F88416ABF1D100B36BA7 /* Foundation.framework */,
