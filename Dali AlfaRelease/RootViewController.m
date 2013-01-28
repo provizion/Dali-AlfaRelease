@@ -55,6 +55,7 @@
     self.buttonsViewController.delegate = self;
     [self addChildViewController:self.buttonsViewController];
     [self.view addSubview:self.buttonsViewController.view];
+    self.buttonsViewController.view.frame = pageViewRect;
     
     // Configure InfoViewController
     

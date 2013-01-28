@@ -21,6 +21,7 @@
     [super viewDidLoad];
 	
     self.paintView.image = paintObject.image;
+    self.paintView.frame = self.view.frame;
 }
 
 - (void)didReceiveMemoryWarning
