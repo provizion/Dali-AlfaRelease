@@ -62,9 +62,43 @@
     self.infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
     self.infoViewController.delegate = self;
     
+    
+    
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+    
+    //Override the TapGestureRecognizer
+    
+    // Find the tap gesture recognizer so we can remove it!
+    UIGestureRecognizer* tapRecognizer = nil;
+    for (UIGestureRecognizer* recognizer in self.pageViewController.gestureRecognizers) {
+        if ( [recognizer isKindOfClass:[UITapGestureRecognizer class]] ) {
+            tapRecognizer = recognizer;
+            break;
+        }
+    }
+    
+    if ( tapRecognizer ) {
+        [self.view removeGestureRecognizer:tapRecognizer];
+        [self.pageViewController.view removeGestureRecognizer:tapRecognizer];
+    }
+        
+    //CGRect
+    //UIView *tapLayer = [[UIView alloc] initWithFrame:(0,0,700,700)];
+    //[self.view addSubview:tapLayer];
+    // Create and initialize a tap gesture
+    UITapGestureRecognizer *tapRecognizerRight = [[UITapGestureRecognizer alloc]
+                                                 initWithTarget:self action:@selector(showInfoView:)];
+        
+    // Specify that the gesture must be a single tap
+    tapRecognizerRight.numberOfTapsRequired = 1;
+        
+    // Add the tap gesture recognizer to the view
+    [self.view addGestureRecognizer:tapRecognizerRight];
+    [self.pageViewController.view addGestureRecognizer:tapRecognizerRight];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -175,6 +209,29 @@
     else
         [player pause];
 }
+
+- (IBAction)hideButtons:(id)sender
+
+{
+    
+    NSLog (@"I am tapped");
+    
+
+    if (self.buttonsViewController.view.superview == self.view) {
+    
+    [self.buttonsViewController.view removeFromSuperview];
+    }
+    
+    
+    else {
+        
+    [self.view addSubview:self.buttonsViewController.view];
+    }
+    
+    
+}
+
+
 
 @end
 

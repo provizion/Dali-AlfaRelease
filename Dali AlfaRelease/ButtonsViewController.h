@@ -15,6 +15,9 @@
     
     id <ButtonsViewControllerDelegate> delegate;
     IBOutlet UILabel *titleLabel;
+    IBOutlet UIButton *playButton;
+    IBOutlet UIButton *infoButton;
+    
 }
 
 @property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
@@ -24,6 +27,7 @@
 - (IBAction)nextPaintingShow:(id)sender;
 - (IBAction)previousPaintingShow:(id)sender;
 - (IBAction)infoShow:(id)sender;
+- (IBAction)hideButton:(id)sender;
 
 
 

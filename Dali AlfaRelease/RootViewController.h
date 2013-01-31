@@ -20,5 +20,6 @@
 - (void) nextButtonPressed;
 - (void) closeInfoView;
 - (void) showInfoView;
+- (IBAction)hideButtons:(id)sender;
 
 @end

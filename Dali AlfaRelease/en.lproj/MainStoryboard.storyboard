@@ -12,13 +12,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lag-sJ-3Pf" appends="YES" id="qhl-XL-FCg"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Lag-sJ-3Pf">
+                    <connections>
+                        <action selector="hideButtons:" destination="2" id="foD-tD-9wP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-3" y="-691"/>
         </scene>
@@ -28,16 +37,19 @@
                 <viewController storyboardIdentifier="DataViewController" id="5" customClass="DataViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eXm-1k-lmw">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JpA-fG-Vij"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JpA-fG-Vij">
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="JpA-fG-Vij" firstAttribute="top" secondItem="eXm-1k-lmw" secondAttribute="top" type="default" id="0cK-6A-nQg"/>
-                            <constraint firstItem="JpA-fG-Vij" firstAttribute="trailing" secondItem="eXm-1k-lmw" secondAttribute="trailing" type="default" id="V4F-2F-P7C"/>
-                            <constraint firstItem="JpA-fG-Vij" firstAttribute="bottom" secondItem="eXm-1k-lmw" secondAttribute="bottom" type="default" id="h3a-GC-zbN"/>
-                            <constraint firstItem="JpA-fG-Vij" firstAttribute="leading" secondItem="eXm-1k-lmw" secondAttribute="leading" type="default" id="hLt-r1-CXy"/>
+                            <constraint firstItem="JpA-fG-Vij" firstAttribute="trailing" secondItem="eXm-1k-lmw" secondAttribute="trailing" type="default" id="7nK-DK-UEx"/>
+                            <constraint firstItem="JpA-fG-Vij" firstAttribute="top" secondItem="eXm-1k-lmw" secondAttribute="top" type="default" id="FSc-mh-Pfz"/>
+                            <constraint firstItem="JpA-fG-Vij" firstAttribute="bottom" secondItem="eXm-1k-lmw" secondAttribute="bottom" type="default" id="Wca-0V-yfY"/>
+                            <constraint firstItem="JpA-fG-Vij" firstAttribute="leading" secondItem="eXm-1k-lmw" secondAttribute="leading" type="default" id="aIm-sU-tan"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -64,6 +76,9 @@
         </class>
         <class className="RootViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideButtons:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

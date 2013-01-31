@@ -62,5 +62,26 @@
     [delegate songPlayPressed];
 }
 
+- (IBAction) hideButton:(id)sender
+
+{
+    
+    if (self.titleLabel.alpha == 1)
+    {
+        self.titleLabel.alpha = 0;
+        playButton.alpha = 0;
+        infoButton.alpha = 0;
+    
+    }
+    else
+    {
+        self.titleLabel.alpha = 1;
+        playButton.alpha = 1;
+        infoButton.alpha = 1;
+    }
+    
+
+}
+
 
 @end
