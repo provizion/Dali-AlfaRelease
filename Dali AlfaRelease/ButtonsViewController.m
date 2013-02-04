@@ -14,7 +14,7 @@
 
 @implementation ButtonsViewController
 
-@synthesize delegate, titleLabel;
+@synthesize delegate, titleLabel, paintObject;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    titleLabel.text = paintObject.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +64,7 @@
 - (IBAction)songPlay:(id)sender
 
 {
-    [delegate songPlayPressed];
+    [delegate voicePressed];
 }
 
 - (IBAction) hideButton:(id)sender

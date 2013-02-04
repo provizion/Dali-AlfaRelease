@@ -10,16 +10,15 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ButtonsViewController.h"
 #import "InfoViewController.h"
+#import "PlayerViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate, InfoViewControllerDelegate>
+
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (nonatomic, retain) AVAudioPlayer *player;
+@property (nonatomic) NSUInteger currentIndex; //Current displayed page
 
-- (void) songPlayPressed;
-- (void) nextButtonPressed;
-- (void) closeInfoView;
-- (void) showInfoView;
-- (IBAction)hideButtons:(id)sender;
 
 @end
+
+

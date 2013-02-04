@@ -14,7 +14,7 @@
 
 @implementation InfoViewController
 
-@synthesize delegate, paintObject, infoView, textView, doneButton;
+@synthesize paintObject, textView, doneButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,14 +41,12 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    //resize modal view
-    self.view.superview.bounds = CGRectMake(0, 0, 700, 500);
-    self.textView.text = paintObject.text;
+    textView.text = paintObject.text;
 }
 
 - (IBAction)done:(id)sender
 {
-    [delegate closeInfoView];
+    [self.view removeFromSuperview];
 }
 
 @end

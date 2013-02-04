@@ -16,12 +16,13 @@
 @property (readonly, strong, nonatomic) ModelController *modelController;
 @property (strong, nonatomic) ButtonsViewController *buttonsViewController;
 @property (strong, nonatomic) InfoViewController *infoViewController;
+@property (strong, nonatomic) PlayerViewController *playerViewController;
 @end
 
 @implementation RootViewController
 
 @synthesize modelController = _modelController;
-@synthesize pageViewController, buttonsViewController, player;
+@synthesize pageViewController, buttonsViewController, currentIndex;
 
 - (void)viewDidLoad
 {
@@ -31,13 +32,14 @@
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    //self.pageViewController.delegate = self;
+    
 
     DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
 
     self.pageViewController.dataSource = self.modelController;
+    self.pageViewController.delegate = self;
 
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -54,13 +56,17 @@
     self.buttonsViewController = [[ButtonsViewController alloc] initWithNibName:@"ButtonsViewController" bundle:nil];
     self.buttonsViewController.delegate = self;
     [self addChildViewController:self.buttonsViewController];
+    self.buttonsViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     [self.view addSubview:self.buttonsViewController.view];
     self.buttonsViewController.view.frame = pageViewRect;
     
     // Configure InfoViewController
     
     self.infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    self.infoViewController.delegate = self;
+    
+    //Configure PlayerViewController
+    
+    self.playerViewController = [[PlayerViewController alloc] initWithNibName:@"PlayerViewController" bundle:nil];
     
     
     
@@ -84,21 +90,7 @@
         [self.pageViewController.view removeGestureRecognizer:tapRecognizer];
     }
         
-    //CGRect
-    //UIView *tapLayer = [[UIView alloc] initWithFrame:(0,0,700,700)];
-    //[self.view addSubview:tapLayer];
-    // Create and initialize a tap gesture
-    UITapGestureRecognizer *tapRecognizerRight = [[UITapGestureRecognizer alloc]
-                                                 initWithTarget:self action:@selector(showInfoView:)];
         
-    // Specify that the gesture must be a single tap
-    tapRecognizerRight.numberOfTapsRequired = 1;
-        
-    // Add the tap gesture recognizer to the view
-    [self.view addGestureRecognizer:tapRecognizerRight];
-    [self.pageViewController.view addGestureRecognizer:tapRecognizerRight];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,11 +123,10 @@
         NSArray *viewControllers = @[nextDataViewController];
         [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
         
+        currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+        
         //add the voice for next scene
         paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-        NSURL *urlForPlayer = paintObjectForAudio.voice;
-        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
-        [player prepareToPlay];
         
         //change the title and text
         
@@ -164,21 +155,17 @@
         [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
         
         //load the audio for paint
+        currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+        
         paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-        NSURL *urlForPlayer = paintObjectForAudio.voice;
-        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
-        [player prepareToPlay];
         
         //change the title and text
         
         self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
+        NSLog (@"%i", currentIndex);
 
     }
-    
-    
-
 }
-
 
 
 - (void) showInfoView
@@ -186,9 +173,8 @@
     NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
     NSLog (@"index = %i",index);
     self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:index];
-    self.infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    self.infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:self.infoViewController animated:YES completion:NULL];
+    [self.view addSubview:self.infoViewController.view];
+
 }
 
 #pragma mark - InfoViewController delegate methods
@@ -196,52 +182,44 @@
 - (void) closeInfoView
 
 {
-    
-   [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void) songPlayPressed
-
-{
-    
-    if (self.player.isPlaying == NO)
-        [player play];
-    else
-        [player pause];
-}
-
-- (IBAction)hideButtons:(id)sender
-
-{
-    
-    NSLog (@"I am tapped");
-    
-
-    if (self.buttonsViewController.view.superview == self.view) {
-    
-    [self.buttonsViewController.view removeFromSuperview];
-    }
-    
-    
-    else {
-        
+    [self.infoViewController.view removeFromSuperview];
     [self.view addSubview:self.buttonsViewController.view];
-    }
+   
+
+}
+
+- (void) voicePressed
+
+{
     
+    [self.view addSubview:self.playerViewController.view];
+    self.playerViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     
 }
 
+#pragma mark - UIPageViewController delegate methods
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    if (completed == YES);
+    {
+    currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    NSLog (@"CurrentPage = %i",currentIndex);
+    self.buttonsViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
+    self.buttonsViewController.titleLabel.text = self.buttonsViewController.paintObject.name;
+    }
+    
+}
 
 
 @end
 
-#pragma mark - UIPageViewController delegate methods
+
+
 
 /*
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
-{
-    
-}
+
+
 
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation

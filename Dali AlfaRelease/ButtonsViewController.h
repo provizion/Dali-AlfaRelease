@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaintObject.h"
 
 @protocol ButtonsViewControllerDelegate;
 
@@ -22,6 +23,7 @@
 
 @property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic, retain) PaintObject *paintObject;
 
 - (IBAction)songPlay:(id)sender;
 - (IBAction)nextPaintingShow:(id)sender;
@@ -38,7 +40,7 @@
 - (void) nextButtonPressed;
 - (void) previousButtonPressed;
 - (void) showInfoView;
-- (void) songPlayPressed;
+- (void) voicePressed;
 
 @end
 

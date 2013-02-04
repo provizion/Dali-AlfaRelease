@@ -41,10 +41,9 @@
     if (([self.pageData count] == 0) || (index >= [self.pageData count])) {
         return nil;
     }
-    
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-    dataViewController.paintObject = [self.pageData objectAtIndex:index] ;
+      dataViewController.paintObject = [self.pageData objectAtIndex:index] ;
     return dataViewController;
 }
 

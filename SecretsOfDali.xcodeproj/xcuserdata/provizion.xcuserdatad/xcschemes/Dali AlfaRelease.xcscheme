@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5233F87D16ABF1D100B36BA7"
-               BuildableName = "Dali AlfaRelease.app"
-               BlueprintName = "Dali AlfaRelease"
-               ReferencedContainer = "container:Dali AlfaRelease.xcodeproj">
+               BuildableName = "SecretsOfDali.app"
+               BlueprintName = "SecretsOfDali"
+               ReferencedContainer = "container:SecretsOfDali.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5233F8AA16ABF1D100B36BA7"
-               BuildableName = "Dali AlfaReleaseTests.octest"
-               BlueprintName = "Dali AlfaReleaseTests"
-               ReferencedContainer = "container:Dali AlfaRelease.xcodeproj">
+               BuildableName = "SecretsOfDaliTests.octest"
+               BlueprintName = "SecretsOfDaliTests"
+               ReferencedContainer = "container:SecretsOfDali.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5233F87D16ABF1D100B36BA7"
-            BuildableName = "Dali AlfaRelease.app"
-            BlueprintName = "Dali AlfaRelease"
-            ReferencedContainer = "container:Dali AlfaRelease.xcodeproj">
+            BuildableName = "SecretsOfDali.app"
+            BlueprintName = "SecretsOfDali"
+            ReferencedContainer = "container:SecretsOfDali.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5233F87D16ABF1D100B36BA7"
-            BuildableName = "Dali AlfaRelease.app"
-            BlueprintName = "Dali AlfaRelease"
-            ReferencedContainer = "container:Dali AlfaRelease.xcodeproj">
+            BuildableName = "SecretsOfDali.app"
+            BlueprintName = "SecretsOfDali"
+            ReferencedContainer = "container:SecretsOfDali.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5233F87D16ABF1D100B36BA7"
-            BuildableName = "Dali AlfaRelease.app"
-            BlueprintName = "Dali AlfaRelease"
-            ReferencedContainer = "container:Dali AlfaRelease.xcodeproj">
+            BuildableName = "SecretsOfDali.app"
+            BlueprintName = "SecretsOfDali"
+            ReferencedContainer = "container:SecretsOfDali.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
