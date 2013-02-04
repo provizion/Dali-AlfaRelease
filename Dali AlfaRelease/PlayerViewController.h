@@ -14,6 +14,7 @@
 @interface PlayerViewController : UIViewController {
 
     IBOutlet UIButton* playButton;
+    IBOutlet UISlider *timeSlider;
         
 }
 
