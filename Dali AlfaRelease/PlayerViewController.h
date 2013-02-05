@@ -13,13 +13,14 @@
 
 @interface PlayerViewController : UIViewController {
 
-    IBOutlet UIButton* playButton;
+    IBOutlet UIButton *playButton;
     IBOutlet UISlider *timeSlider;
         
 }
 
 @property (nonatomic, retain) AVAudioPlayer *player;
 @property (nonatomic, retain) PaintObject *paintObject;
+@property (nonatomic, retain) IBOutlet UIButton *playButton;
 
 
 - (IBAction)play: (id) sender;

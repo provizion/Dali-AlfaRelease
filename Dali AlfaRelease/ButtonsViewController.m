@@ -76,6 +76,12 @@
         self.titleLabel.alpha = 0;
         playButton.alpha = 0;
         infoButton.alpha = 0;
+        labelAboveButtons.alpha = 0;
+        bottomArc.alpha = 0;
+        upperArc.alpha = 0;
+        labelTextButton.alpha = 0;
+        labelVoiceButton.alpha = 0;
+        
     
     }
     else
@@ -83,6 +89,11 @@
         self.titleLabel.alpha = 1;
         playButton.alpha = 1;
         infoButton.alpha = 1;
+        labelAboveButtons.alpha = 1;
+        bottomArc.alpha = 1;
+        upperArc.alpha = 1;
+        labelTextButton.alpha = 1;
+        labelVoiceButton.alpha = 1;
     }
     
 

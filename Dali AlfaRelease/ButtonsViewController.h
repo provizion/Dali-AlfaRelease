@@ -18,6 +18,11 @@
     IBOutlet UILabel *titleLabel;
     IBOutlet UIButton *playButton;
     IBOutlet UIButton *infoButton;
+    IBOutlet UILabel *labelAboveButtons;
+    IBOutlet UILabel *labelTextButton;
+    IBOutlet UILabel *labelVoiceButton;
+    IBOutlet UIImageView *bottomArc;
+    IBOutlet UIImageView *upperArc;
     
 }
 

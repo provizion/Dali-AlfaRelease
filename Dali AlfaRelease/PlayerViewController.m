@@ -14,7 +14,7 @@
 
 @implementation PlayerViewController
 
-@synthesize paintObject, player;
+@synthesize paintObject, player, playButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURL *urlForPlayer = paintObject.voice;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
-    [player prepareToPlay];
-    
 
 }
 
@@ -54,9 +50,18 @@
 
 {
     if (self.player.isPlaying == NO)
+    {
         [player play];
+        UIImage *pauseButtonImage = [UIImage imageNamed:@"pauseButton.png"];
+        [playButton setImage:pauseButtonImage forState:UIControlStateNormal];
+    }
+        
     else
-        [player pause];
+    {
+        [player stop];
+        UIImage *playButtonImage = [UIImage imageNamed:@"playButton.png"];
+        [playButton setImage:playButtonImage forState:UIControlStateNormal];
+    }
     
 }
 

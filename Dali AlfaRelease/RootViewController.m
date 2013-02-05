@@ -67,7 +67,7 @@
     //Configure PlayerViewController
     
     self.playerViewController = [[PlayerViewController alloc] initWithNibName:@"PlayerViewController" bundle:nil];
-    
+    self.playerViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
@@ -111,79 +111,20 @@
 
 #pragma mark - ButtonsViewController delegate methods
 
-- (void) nextButtonPressed
-{
-    DataViewController *nextDataViewController = [[DataViewController alloc] init];
-    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
-    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    index ++;
-    if (index < [self.modelController.pageData count]) {
-    
-        nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
-        NSArray *viewControllers = @[nextDataViewController];
-        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
-        
-        currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-        
-        //add the voice for next scene
-        paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-        
-        //change the title and text
-        
-        self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
-        
-    }
-    
-
-}
-
-- (void) previousButtonPressed
-{
-    DataViewController *nextDataViewController = [[DataViewController alloc] init];
-    PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
-    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    if ((index == 0) || (index == NSNotFound)) {
-        
-    }
-    
-    else {
-    index --;
-    
-        
-        nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
-        NSArray *viewControllers = @[nextDataViewController];
-        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
-        
-        //load the audio for paint
-        currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-        
-        paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
-        
-        //change the title and text
-        
-        self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
-        NSLog (@"%i", currentIndex);
-
-    }
-}
-
 
 - (void) showInfoView
 {
-    NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    NSLog (@"index = %i",index);
-    self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:index];
+    self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     [self.view addSubview:self.infoViewController.view];
 
 }
 
-#pragma mark - InfoViewController delegate methods
+#pragma mark - Info&AudioViewControllers delegate methods
 
 - (void) closeInfoView
 
 {
     [self.infoViewController.view removeFromSuperview];
-    [self.view addSubview:self.buttonsViewController.view];
    
 
 }
@@ -192,8 +133,9 @@
 
 {
     
-    [self.view addSubview:self.playerViewController.view];
     self.playerViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
+    [self.view addSubview:self.playerViewController.view];
+    
     
 }
 
@@ -203,10 +145,17 @@
 {
     if (completed == YES);
     {
-    currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
-    NSLog (@"CurrentPage = %i",currentIndex);
-    self.buttonsViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
-    self.buttonsViewController.titleLabel.text = self.buttonsViewController.paintObject.name;
+        currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+        NSLog (@"CurrentPage = %i",currentIndex);
+    
+        PaintObject *currentPaintObject = [[PaintObject alloc] init];
+        currentPaintObject = [self.modelController.pageData objectAtIndex:currentIndex];
+        self.buttonsViewController.titleLabel.text = currentPaintObject.name;
+        self.infoViewController.textView.text = currentPaintObject.text;
+        NSURL *urlForPlayer = currentPaintObject.voice;
+        self.playerViewController.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        [self.playerViewController.player prepareToPlay];
+        
     }
     
 }
@@ -252,4 +201,64 @@
     return UIPageViewControllerSpineLocationMid;
 }
  */
+
+/*
+ - (void) nextButtonPressed
+ {
+ DataViewController *nextDataViewController = [[DataViewController alloc] init];
+ PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
+ NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+ index ++;
+ if (index < [self.modelController.pageData count]) {
+ 
+ nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
+ NSArray *viewControllers = @[nextDataViewController];
+ [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+ 
+ currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+ 
+ //add the voice for next scene
+ paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+ 
+ //change the title and text
+ 
+ self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
+ 
+ }
+ 
+ 
+ }
+ 
+ - (void) previousButtonPressed
+ {
+ DataViewController *nextDataViewController = [[DataViewController alloc] init];
+ PaintObject *paintObjectForAudio = [[PaintObject alloc] init];
+ NSUInteger index = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+ if ((index == 0) || (index == NSNotFound)) {
+ 
+ }
+ 
+ else {
+ index --;
+ 
+ 
+ nextDataViewController = [self.modelController viewControllerAtIndex:index storyboard:self.storyboard];
+ NSArray *viewControllers = @[nextDataViewController];
+ [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+ 
+ //load the audio for paint
+ currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+ 
+ paintObjectForAudio = [self.modelController.pageData objectAtIndex:index];
+ 
+ //change the title and text
+ 
+ self.buttonsViewController.titleLabel.text = paintObjectForAudio.name;
+ NSLog (@"%i", currentIndex);
+ 
+ }
+ }
+ */
+
+
 
