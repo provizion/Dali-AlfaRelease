@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "ButtonsViewController.h"
-#import "InfoViewController.h"
-#import "PlayerViewController.h"
 
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate, ButtonsViewControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NSUInteger currentIndex; //Current displayed page

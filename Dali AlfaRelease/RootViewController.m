@@ -8,15 +8,12 @@
 
 #import "RootViewController.h"
 #import "ModelController.h"
-#import "ButtonsViewController.h"
 #import "DataViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface RootViewController ()
 @property (readonly, strong, nonatomic) ModelController *modelController;
 @property (strong, nonatomic) ButtonsViewController *buttonsViewController;
-@property (strong, nonatomic) InfoViewController *infoViewController;
-@property (strong, nonatomic) PlayerViewController *playerViewController;
 @end
 
 @implementation RootViewController
@@ -27,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+
     
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -47,36 +44,24 @@
     // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
     CGRect pageViewRect = self.view.bounds;
     pageViewRect = CGRectInset(pageViewRect, 0, 0);
-    self.pageViewController.view.frame = pageViewRect;
+    //self.pageViewController.view.frame = pageViewRect;
 
     [self.pageViewController didMoveToParentViewController:self];
     
     // Configure ButtonsViewController
     
     self.buttonsViewController = [[ButtonsViewController alloc] initWithNibName:@"ButtonsViewController" bundle:nil];
-    self.buttonsViewController.delegate = self;
-    [self addChildViewController:self.buttonsViewController];
+    //[self addChildViewController:self.buttonsViewController];
     self.buttonsViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     [self.view addSubview:self.buttonsViewController.view];
-    self.buttonsViewController.view.frame = pageViewRect;
-    
-    // Configure InfoViewController
-    
-    self.infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    
-    //Configure PlayerViewController
-    
-    self.playerViewController = [[PlayerViewController alloc] initWithNibName:@"PlayerViewController" bundle:nil];
-    self.playerViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
-    
+    //self.buttonsViewController.view.frame = pageViewRect;
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
     
-    //Override the TapGestureRecognizer
+    //Remove the TapGestureRecognizer
     
-    // Find the tap gesture recognizer so we can remove it!
     UIGestureRecognizer* tapRecognizer = nil;
     for (UIGestureRecognizer* recognizer in self.pageViewController.gestureRecognizers) {
         if ( [recognizer isKindOfClass:[UITapGestureRecognizer class]] ) {
@@ -89,54 +74,23 @@
         [self.view removeGestureRecognizer:tapRecognizer];
         [self.pageViewController.view removeGestureRecognizer:tapRecognizer];
     }
-        
-        
-}
 
+    
+    
+}
+    
+     
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (ModelController *)modelController
 {
-     // Return the model controller object, creating it if necessary.
-     // In more complex implementations, the model controller may be passed to the view controller.
     if (!_modelController) {
         _modelController = [[ModelController alloc] init];
     }
     return _modelController;
-}
-
-#pragma mark - ButtonsViewController delegate methods
-
-
-- (void) showInfoView
-{
-    self.infoViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
-    [self.view addSubview:self.infoViewController.view];
-
-}
-
-#pragma mark - Info&AudioViewControllers delegate methods
-
-- (void) closeInfoView
-
-{
-    [self.infoViewController.view removeFromSuperview];
-   
-
-}
-
-- (void) voicePressed
-
-{
-    
-    self.playerViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
-    [self.view addSubview:self.playerViewController.view];
-    
-    
 }
 
 #pragma mark - UIPageViewController delegate methods
@@ -147,15 +101,14 @@
     {
         currentIndex = [self.modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
         NSLog (@"CurrentPage = %i",currentIndex);
-    
+        
         PaintObject *currentPaintObject = [[PaintObject alloc] init];
         currentPaintObject = [self.modelController.pageData objectAtIndex:currentIndex];
-        self.buttonsViewController.titleLabel.text = currentPaintObject.name;
-        self.infoViewController.textView.text = currentPaintObject.text;
         NSURL *urlForPlayer = currentPaintObject.voice;
-        self.playerViewController.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
-        [self.playerViewController.player prepareToPlay];
-        
+        self.buttonsViewController.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        self.buttonsViewController.titleLabel.text = currentPaintObject.name;
+        self.buttonsViewController.text.text = currentPaintObject.text;
+        [self.buttonsViewController.player stop];
     }
     
 }
@@ -164,9 +117,9 @@
 @end
 
 
-
-
 /*
+
+
 
 
 
@@ -200,7 +153,8 @@
 
     return UIPageViewControllerSpineLocationMid;
 }
- */
+
+*/
 
 /*
  - (void) nextButtonPressed

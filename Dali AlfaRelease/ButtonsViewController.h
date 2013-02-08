@@ -8,27 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "PaintObject.h"
+#import <AVFoundation/AVFoundation.h>
 
-@protocol ButtonsViewControllerDelegate;
 
 
 @interface ButtonsViewController : UIViewController {
     
-    id <ButtonsViewControllerDelegate> delegate;
-    IBOutlet UILabel *titleLabel;
     IBOutlet UIButton *playButton;
-    IBOutlet UIButton *infoButton;
     IBOutlet UILabel *labelAboveButtons;
-    IBOutlet UILabel *labelTextButton;
     IBOutlet UILabel *labelVoiceButton;
     IBOutlet UIImageView *bottomArc;
     IBOutlet UIImageView *upperArc;
     
 }
 
-@property (nonatomic, retain) id <ButtonsViewControllerDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) PaintObject *paintObject;
+@property (nonatomic, retain) AVAudioPlayer *player;
+@property (nonatomic, retain) IBOutlet UITextView *text;
+
 
 - (IBAction)songPlay:(id)sender;
 - (IBAction)nextPaintingShow:(id)sender;
@@ -40,12 +38,4 @@
 
 @end
 
-@protocol ButtonsViewControllerDelegate
-
-- (void) nextButtonPressed;
-- (void) previousButtonPressed;
-- (void) showInfoView;
-- (void) voicePressed;
-
-@end
 

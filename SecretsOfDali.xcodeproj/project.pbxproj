@@ -36,8 +36,6 @@
 		5233F8D316ABF3CC00B36BA7 /* PaintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8D216ABF3CC00B36BA7 /* PaintObject.m */; };
 		5233F8DC16AC243A00B36BA7 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */; };
 		5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */; };
-		52C8E4AF16BEED2700CC97C5 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C8E4AD16BEED2700CC97C5 /* PlayerViewController.m */; };
-		52C8E4B016BEED2700CC97C5 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4AE16BEED2700CC97C5 /* PlayerViewController.xib */; };
 		52C8E4C516BFD1BA00CC97C5 /* arc_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BC16BFD1BA00CC97C5 /* arc_down.png */; };
 		52C8E4C616BFD1BA00CC97C5 /* arc_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BD16BFD1BA00CC97C5 /* arc_up.png */; };
 		52C8E4C716BFD1BA00CC97C5 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BE16BFD1BA00CC97C5 /* backButton.png */; };
@@ -48,8 +46,6 @@
 		52C8E4CC16BFD1BA00CC97C5 /* textButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4C316BFD1BA00CC97C5 /* textButton.png */; };
 		52C8E4CD16BFD1BA00CC97C5 /* voiceButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4C416BFD1BA00CC97C5 /* voiceButton.png */; };
 		52C8E4CF16BFDE7600CC97C5 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4CE16BFDE7600CC97C5 /* Background.png */; };
-		52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */; };
-		52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */; };
 		52DE76C516B470B500C5BF82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DE76C416B470B500C5BF82 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,9 +99,7 @@
 		5233F8D916AC243900B36BA7 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
 		5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsViewController.m; sourceTree = "<group>"; };
 		5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsViewController.xib; sourceTree = "<group>"; };
-		52C8E4AC16BEED2700CC97C5 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
-		52C8E4AD16BEED2700CC97C5 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
-		52C8E4AE16BEED2700CC97C5 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		52AFCB7516C4CE5A0058567F /* SecretsOfDali.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SecretsOfDali.xcodeproj; sourceTree = SOURCE_ROOT; };
 		52C8E4BC16BFD1BA00CC97C5 /* arc_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arc_down.png; sourceTree = "<group>"; };
 		52C8E4BD16BFD1BA00CC97C5 /* arc_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arc_up.png; sourceTree = "<group>"; };
 		52C8E4BE16BFD1BA00CC97C5 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
@@ -116,9 +110,6 @@
 		52C8E4C316BFD1BA00CC97C5 /* textButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textButton.png; sourceTree = "<group>"; };
 		52C8E4C416BFD1BA00CC97C5 /* voiceButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voiceButton.png; sourceTree = "<group>"; };
 		52C8E4CE16BFDE7600CC97C5 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = ../Background.png; sourceTree = "<group>"; };
-		52D6FE6D16AC6AB1003FBC4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		52DE76C416B470B500C5BF82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -178,16 +169,6 @@
 			name = ButtonsViewController;
 			sourceTree = "<group>";
 		};
-		5224905E16ADCE4700DC2207 /* InfoViewController */ = {
-			isa = PBXGroup;
-			children = (
-				52D6FE6D16AC6AB1003FBC4A /* InfoViewController.h */,
-				52D6FE6E16AC6AB1003FBC4A /* InfoViewController.m */,
-				52D6FE6F16AC6AB1003FBC4A /* InfoViewController.xib */,
-			);
-			name = InfoViewController;
-			sourceTree = "<group>";
-		};
 		5224906016ADCE7200DC2207 /* DataViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,11 +181,12 @@
 		5224906116ADD0C700DC2207 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5233F8A316ABF1D100B36BA7 /* MainStoryboard.storyboard */,
 				5233F89116ABF1D100B36BA7 /* AppDelegate.h */,
 				5233F89216ABF1D100B36BA7 /* AppDelegate.m */,
 				5233F89A16ABF1D100B36BA7 /* RootViewController.h */,
 				5233F89B16ABF1D100B36BA7 /* RootViewController.m */,
-				5233F8A316ABF1D100B36BA7 /* MainStoryboard.storyboard */,
+				52AFCB7516C4CE5A0058567F /* SecretsOfDali.xcodeproj */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -246,9 +228,7 @@
 			children = (
 				5224906116ADD0C700DC2207 /* Main */,
 				5233F8C316ABF2AE00B36BA7 /* Model */,
-				5224905E16ADCE4700DC2207 /* InfoViewController */,
 				5224905D16ADCE2000DC2207 /* ButtonsViewController */,
-				52C8E4B116BEED4C00CC97C5 /* PlayerViewController */,
 				5224906016ADCE7200DC2207 /* DataViewController */,
 				5233F88916ABF1D100B36BA7 /* Supporting Files */,
 				5233F8C416ABF2D900B36BA7 /* Resources */,
@@ -312,14 +292,9 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		52C8E4B116BEED4C00CC97C5 /* PlayerViewController */ = {
+		52AFCB7616C4CE5A0058567F /* Products */ = {
 			isa = PBXGroup;
-			children = (
-				52C8E4AC16BEED2700CC97C5 /* PlayerViewController.h */,
-				52C8E4AD16BEED2700CC97C5 /* PlayerViewController.m */,
-				52C8E4AE16BEED2700CC97C5 /* PlayerViewController.xib */,
-			);
-			name = PlayerViewController;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		52C8E4BB16BFD1BA00CC97C5 /* Buttons */ = {
@@ -398,6 +373,12 @@
 			mainGroup = 5233F87316ABF1D100B36BA7;
 			productRefGroup = 5233F87F16ABF1D100B36BA7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52AFCB7616C4CE5A0058567F /* Products */;
+					ProjectRef = 52AFCB7516C4CE5A0058567F /* SecretsOfDali.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5233F87D16ABF1D100B36BA7 /* SecretsOfDali */,
@@ -420,8 +401,6 @@
 				5233F8CE16ABF36400B36BA7 /* paint2.jpg in Resources */,
 				5233F8D016ABF36A00B36BA7 /* paint3.jpg in Resources */,
 				5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */,
-				52D6FE7116AC6AB1003FBC4A /* InfoViewController.xib in Resources */,
-				52C8E4B016BEED2700CC97C5 /* PlayerViewController.xib in Resources */,
 				52C8E4C516BFD1BA00CC97C5 /* arc_down.png in Resources */,
 				52C8E4C616BFD1BA00CC97C5 /* arc_up.png in Resources */,
 				52C8E4C716BFD1BA00CC97C5 /* backButton.png in Resources */,
@@ -477,8 +456,6 @@
 				5233F8A216ABF1D100B36BA7 /* ModelController.m in Sources */,
 				5233F8D316ABF3CC00B36BA7 /* PaintObject.m in Sources */,
 				5233F8DC16AC243A00B36BA7 /* ButtonsViewController.m in Sources */,
-				52D6FE7016AC6AB1003FBC4A /* InfoViewController.m in Sources */,
-				52C8E4AF16BEED2700CC97C5 /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
