@@ -54,7 +54,6 @@
     //[self addChildViewController:self.buttonsViewController];
     self.buttonsViewController.paintObject = [self.modelController.pageData objectAtIndex:currentIndex];
     [self.view addSubview:self.buttonsViewController.view];
-    //self.buttonsViewController.view.frame = pageViewRect;
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     
@@ -105,10 +104,12 @@
         PaintObject *currentPaintObject = [[PaintObject alloc] init];
         currentPaintObject = [self.modelController.pageData objectAtIndex:currentIndex];
         NSURL *urlForPlayer = currentPaintObject.voice;
-        self.buttonsViewController.player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        self.buttonsViewController.myplayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlForPlayer error:nil];
+        [self.buttonsViewController.myplayer prepareToPlay];
         self.buttonsViewController.titleLabel.text = currentPaintObject.name;
         self.buttonsViewController.text.text = currentPaintObject.text;
-        [self.buttonsViewController.player stop];
+        [self.buttonsViewController setPlayButton];
+        self.buttonsViewController.myplayer.delegate = self.buttonsViewController;
     }
     
 }

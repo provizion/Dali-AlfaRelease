@@ -12,7 +12,7 @@
 
 
 
-@interface ButtonsViewController : UIViewController {
+@interface ButtonsViewController : UIViewController <AVAudioPlayerDelegate> {
     
     IBOutlet UIButton *playButton;
     IBOutlet UILabel *labelAboveButtons;
@@ -24,17 +24,14 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) PaintObject *paintObject;
-@property (nonatomic, retain) AVAudioPlayer *player;
+@property (nonatomic, retain) AVAudioPlayer *myplayer;
 @property (nonatomic, retain) IBOutlet UITextView *text;
 
 
 - (IBAction)songPlay:(id)sender;
-- (IBAction)nextPaintingShow:(id)sender;
-- (IBAction)previousPaintingShow:(id)sender;
-- (IBAction)infoShow:(id)sender;
 - (IBAction)hideButton:(id)sender;
 
-
+- (void) setPlayButton;
 
 @end
 

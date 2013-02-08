@@ -11,7 +11,7 @@
 #import "ButtonsViewController.h"
 
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate, AVAudioPlayerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (nonatomic) NSUInteger currentIndex; //Current displayed page
