@@ -19,6 +19,7 @@
     IBOutlet UILabel *labelVoiceButton;
     IBOutlet UIImageView *bottomArc;
     IBOutlet UIImageView *upperArc;
+    UIImageView *highlightImageView;
     
 }
 
@@ -32,6 +33,7 @@
 - (IBAction)hideButton:(id)sender;
 
 - (void) setPlayButton;
+- (void) highlightWithImage: (NSString*) imageString forPeriod: (NSTimeInterval*) period;
 
 @end
 

@@ -13,7 +13,7 @@
 
 @interface ModelController : NSObject <UIPageViewControllerDataSource>
 
-@property (retain, nonatomic) NSArray *pageData;
+@property (retain, nonatomic) NSMutableArray *pageData;
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;

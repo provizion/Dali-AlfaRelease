@@ -36,6 +36,7 @@
 		5233F8D316ABF3CC00B36BA7 /* PaintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8D216ABF3CC00B36BA7 /* PaintObject.m */; };
 		5233F8DC16AC243A00B36BA7 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */; };
 		5233F8DD16AC243A00B36BA7 /* ButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */; };
+		5270832E16C66497003E8F7F /* ModelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5270832D16C66497003E8F7F /* ModelData.plist */; };
 		52C8E4C516BFD1BA00CC97C5 /* arc_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BC16BFD1BA00CC97C5 /* arc_down.png */; };
 		52C8E4C616BFD1BA00CC97C5 /* arc_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BD16BFD1BA00CC97C5 /* arc_up.png */; };
 		52C8E4C716BFD1BA00CC97C5 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C8E4BE16BFD1BA00CC97C5 /* backButton.png */; };
@@ -99,6 +100,7 @@
 		5233F8D916AC243900B36BA7 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
 		5233F8DA16AC243A00B36BA7 /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsViewController.m; sourceTree = "<group>"; };
 		5233F8DB16AC243A00B36BA7 /* ButtonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsViewController.xib; sourceTree = "<group>"; };
+		5270832D16C66497003E8F7F /* ModelData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ModelData.plist; sourceTree = "<group>"; };
 		52AFCB7516C4CE5A0058567F /* SecretsOfDali.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SecretsOfDali.xcodeproj; sourceTree = SOURCE_ROOT; };
 		52C8E4BC16BFD1BA00CC97C5 /* arc_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arc_down.png; sourceTree = "<group>"; };
 		52C8E4BD16BFD1BA00CC97C5 /* arc_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arc_up.png; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				5233F8A116ABF1D100B36BA7 /* ModelController.m */,
 				5233F8D116ABF3CC00B36BA7 /* PaintObject.h */,
 				5233F8D216ABF3CC00B36BA7 /* PaintObject.m */,
+				5270832D16C66497003E8F7F /* ModelData.plist */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				520FF1F816C0395F00019843 /* Voice2_1.mp3 in Resources */,
 				520FF1FA16C0396700019843 /* Voice1_1.mp3 in Resources */,
 				520FF1FC16C0396E00019843 /* Voice3_1.mp3 in Resources */,
+				5270832E16C66497003E8F7F /* ModelData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

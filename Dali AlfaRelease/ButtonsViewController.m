@@ -162,4 +162,19 @@
 
 }
 
+- (void) highlightWithImage: (NSString*) imageString forPeriod: (NSTimeInterval*) period;
+
+{
+    UIImage *image = [UIImage imageNamed:imageString];
+    highlightImageView.image = image;
+    highlightImageView.frame = self.view.frame;
+    [self.view addSubview:highlightImageView];
+    [NSTimer timerWithTimeInterval:*period target:self selector:@selector(removeFromSuperViewOnTimer)  userInfo:nil repeats:NO];
+}
+
+- (void) removeFromSuperViewOnTimer;
+{
+    [highlightImageView removeFromSuperview];
+}
+
 @end
